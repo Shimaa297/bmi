@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'icon_content.dart';
 import 'input_page.dart';
 
+
+
 class ResultsPage extends StatelessWidget {
 
   ResultsPage({@required this.bmiResult, @required this.resultText , @required this.feedBack});
+
   final String bmiResult;
   final String resultText;
   final String feedBack;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +52,12 @@ class ResultsPage extends StatelessWidget {
               ),
             ),
           ),
-
+          BottomButton(
+            buttonTitle: 'RE-CALCULATE',
+            onTap: (){
+              Navigator.pop(context);
+            },
+          )
         ],
       ),
     );

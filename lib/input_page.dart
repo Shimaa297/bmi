@@ -187,11 +187,13 @@ class _Inputpage extends State<Inputpage> {
 
               CalculatorBrain calc = CalculatorBrain(height: height, weight: weight);
 
-              Navigator.push(context,
-              MaterialPageRoute(builder: (context)=> ResultsPage(
-                bmiResult: calc.calculateBMI(),
-                resultText: calc.getResult(),
-                feedBack: calc.getFeedBack(),
+              Navigator.push(
+                  context,
+              MaterialPageRoute(
+                  builder: (context)=> ResultsPage(
+                    bmiResult: calc.calculateBMI(),
+                    resultText: calc.getResult(),
+                    feedBack: calc.getFeedBack(),
               )));
             },
           ),
@@ -236,8 +238,8 @@ class RoundIconButton extends StatelessWidget {
       fillColor: Color(0xFF4C4F5B),
       elevation: 6.0,
       constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
+        width: 46.0,
+        height: 46.0,
       ),
       child: Icon(icon),
     );
@@ -251,15 +253,11 @@ class BottomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context)=> ResultsPage(
-              
-            )));
-      },
+      onTap: onTap,
       child: Container(
         child: Center(
-            child: Text('CALCULAT', style: largeButtonTextStyle,)),
+            child: Text(buttonTitle,
+                   style: largeButtonTextStyle,)),
         color: bottomContainerColour,
         margin: EdgeInsets.only(top: 10.0),
         height: bottomContainerHeight,
